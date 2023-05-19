@@ -188,3 +188,57 @@ var rangeSumBST = function (root, low, high) {
 
   return sum;
 };
+
+// 2496. Maximum Value of a String in an Array
+// Easy
+// 277
+// 15
+// The value of an alphanumeric string can be defined as:
+
+// The numeric representation of the string in base 10, if it comprises of digits only.
+// The length of the string, otherwise.
+// Given an array strs of alphanumeric strings, return the maximum value of any string in strs.
+
+// Example 1:
+
+// Input: strs = ["alic3","bob","3","4","00000"]
+// Output: 5
+// Explanation:
+// - "alic3" consists of both letters and digits, so its value is its length, i.e. 5.
+// - "bob" consists only of letters, so its value is also its length, i.e. 3.
+// - "3" consists only of digits, so its value is its numeric equivalent, i.e. 3.
+// - "4" also consists only of digits, so its value is 4.
+// - "00000" consists only of digits, so its value is 0.
+// Hence, the maximum value is 5, of "alic3".
+// Example 2:
+
+// Input: strs = ["1","01","001","0001"]
+// Output: 1
+// Explanation:
+// Each string in the array has value 1. Hence, we return 1.
+
+var maximumValue = function (strs) {
+  let maxVal = 0;
+  for (let str of strs) {
+    let isNumber = true;
+    let numValue = 0;
+    for (let char of str) {
+      if (char < "0" || char > "9") {
+        isNumber = false;
+        break;
+      } else {
+        numValue = numValue * 10 + (char - "0");
+      }
+    }
+    if (isNumber) {
+      if (numValue > maxVal) {
+        maxVal = numValue;
+      }
+    } else {
+      if (str.length > maxVal) {
+        maxVal = str.length;
+      }
+    }
+  }
+  return maxVal;
+};
