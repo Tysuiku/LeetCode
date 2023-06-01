@@ -15,13 +15,13 @@ let twoSum = (nums, target) => {
   return [];
 };
 
-// 2 palindrome number
+// 9 palindrome number
 
 const isPalindrome = (x) => {
   return x.toString() === x.toString().split("").reverse().join("");
 };
 
-// 3 roman to integer
+// 13 roman to integer
 
 const romanToInt = (s) => {
   let map = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
@@ -36,4 +36,21 @@ const romanToInt = (s) => {
   }
 
   return val;
+};
+
+// 14  longest common prefix
+const longestCommonPrefix = (strs) => {
+  if (strs === undefined || strs.length === 0) {
+    return "";
+  }
+
+  for (let i = 0; i < strs[0].length; i++) {
+    for (let j = 1; j < strs.length; j++) {
+      if (i === strs[j].length || strs[j][i] !== strs[0][i]) {
+        return strs[0].substring(0, i);
+      }
+    }
+  }
+
+  return strs[0];
 };
