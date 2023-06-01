@@ -130,3 +130,18 @@ const removeElement = (nums, val) => {
 
   return k;
 };
+
+// 28 find index of first occurance of string
+
+const strStr = (haystack, needle) => {
+  if (needle === "") {
+    return 0;
+  }
+  for (let i = 0; i <= haystack.length - needle.length; i++) {
+    if (haystack.slice(i, i + needle.length) === needle) {
+      return i;
+    }
+  }
+
+  return -1;
+};
