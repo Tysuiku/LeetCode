@@ -164,3 +164,10 @@ const searchInsert = (nums, target) => {
   }
   return low;
 };
+
+// 58 length of last word
+
+const lengthOfLastWord = (s) => {
+  words = s.trim().split(" ");
+  return words[words.length - 1].length;
+};
