@@ -1,4 +1,5 @@
 // 1 two sum
+
 let twoSum = (nums, target) => {
   let map = {};
 
@@ -12,4 +13,10 @@ let twoSum = (nums, target) => {
     map[nums[i]] = i;
   }
   return [];
+};
+
+// 2 palindrome number
+
+const isPalindrome = (x) => {
+  return x.toString() === x.toString().split("").reverse().join("");
 };
