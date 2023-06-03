@@ -186,7 +186,7 @@ const plusOne = (digits) => {
   return digits;
 };
 
-// 67 add binary
+// 67 add binary (revisit this)
 
 // const addBinary = (a, b) => {
 //   let sum = parseInt(a, 2) + parseInt(b, 2);
@@ -207,4 +207,30 @@ const addBinary = (a, b) => {
   }
   if (carry) result += carry;
   return result.split("").reverse().join("");
+};
+
+// square root
+
+const mySqrt = function (x) {
+  if (x < 2) {
+    return x;
+  }
+
+  let left = 1;
+  let right = x;
+  while (left < right) {
+    const mid = left + Math.floor((right - left) / 2);
+
+    if (mid * mid === x) {
+      return mid;
+    }
+
+    if (mid * mid > x) {
+      right = mid;
+    } else {
+      left = mid + 1;
+    }
+  }
+
+  return left - 1;
 };
