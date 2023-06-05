@@ -12,3 +12,18 @@ const twoSum = (nums, target) => {
 };
 
 //121
+const maxProfit = (prices) => {
+  let minPrice = prices[0];
+  let maxProfit = 0;
+
+  for (let i = 0; i < prices.length; i++) {
+    let val = prices[i] - minPrice;
+    if (prices[i] < minPrice) {
+      minPrice = prices[i];
+    } else if (val > maxProfit) {
+      maxProfit = val;
+    }
+  }
+
+  return maxProfit;
+};
