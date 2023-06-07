@@ -59,3 +59,4 @@ const productExceptSelf = (nums) => {
 
   return answer;
 };
+// testing windows setup environment
