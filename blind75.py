@@ -31,3 +31,19 @@ class Solution(object):
             elif val > maxProfit:
                 maxProfit = val
         return maxProfit
+
+
+# 217
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        val = {}
+        for num in nums:
+            if num in val:
+                return True
+            else:
+                val[num] = 1
+        return False
