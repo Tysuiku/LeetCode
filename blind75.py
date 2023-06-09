@@ -13,3 +13,21 @@ class Solution:
             if complement in num_map:
                 return [num_map[complement], i]
             num_map[num] = i
+
+
+# 121
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        minPrice = prices[0]
+        maxProfit = 0
+        for price in prices:
+            val = price - minPrice
+            if price < minPrice:
+                minPrice = price
+            elif val > maxProfit:
+                maxProfit = val
+        return maxProfit
