@@ -89,3 +89,25 @@ class Solution(object):
             result = max(result, max_prod)
 
         return result
+
+
+# 242
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        map1 = self.anaHash(s)
+        map2 = self.anaHash(t)
+        return map1 == map2
+
+    def anaHash(self, str):
+        ana_map = {}
+        for char in str:
+            if char in ana_map:
+                ana_map[char] += 1
+            else:
+                ana_map[char] = 1
+        return ana_map
